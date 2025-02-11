@@ -8,7 +8,7 @@ function CircleA(){
         var x=e.clientX;
         var y=e.clientY;
         // console.log(x,"sdf",y)
-        var size=Math.floor(Math.random()*(200-20+1)+20)
+        var size=Math.floor(Math.random()*(200-21)+20)
         console.log(size)
 
         setCircle(prev=>{
@@ -58,7 +58,7 @@ function CircleA(){
 
                 </div>
             })}
-
+            
         </div>
         
         </>
