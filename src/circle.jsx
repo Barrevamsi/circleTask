@@ -7,10 +7,13 @@ function CircleA(){
     function circles(e){
         var x=e.clientX;
         var y=e.clientY;
+        console.log(x,y)
+        
         // console.log(x,"sdf",y)
         var size=Math.floor(Math.random()*(200-21)+20)
         console.log(size)
-
+        console.log(x-size/2,"diff")
+        console.log(y-size/2,"dwertg")
         setCircle(prev=>{
             const data=[...prev,{x,y,size}]
             if(data.length>2) return [];
@@ -41,17 +44,20 @@ function CircleA(){
             width:"100vw",
             height:"100vh",
             position:"relative",
-            backgroundColor:intersect? "red":"white"
+            backgroundColor:intersect? "red":"white",
+            border:"1px solid black",
+            boxSizing:"border-box",
+            cursor:"pointer"
 
         }}>
             <h1>Click anyware in the screen for circle </h1>
             {circle.map((val,ind)=>{
-               return <div key="ind" style={{
+               return <div key={ind} style={{
                     height:val.size+"px",
                     width:val.size+"px",
                     position:"absolute",
-                    top:val.y+"px",
-                    left:val.x+"px",
+                    top:(val.y-(val.size/2)-10)+"px",
+                    left:(val.x-(val.size/2)-10)+"px",
                     border:"2px solid black",
                     borderRadius:"50%"
                 }}>
